@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+
+Flat.destroy_all
+
 Flat.create!(
   name: 'Light & Spacious Garden Flat London',
   address: '10 Clifton Gardens London W9 1DT',
@@ -13,3 +17,13 @@ Flat.create!(
   price_per_night: 75,
   number_of_guests: 3
 )
+
+10.times do
+  Flat.create!(
+    name: Faker::Commerce.product_name,
+    address: Faker::Address.full_address,
+    description: Faker::Restaurant.description,
+    price_per_night: Faker::Commerce.price(range: 30..120),
+    number_of_guests: rand(1..5)
+  )
+end
