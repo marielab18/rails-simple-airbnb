@@ -1,1 +1,33 @@
-<%= @flat.name %>
+<div class="banner"
+    style='background-image: linear-gradient(rgba(0,0,0,0.4),
+            rgba(0,0,0,0.4)),
+            url(https://source.unsplash.com/random/120×120/?house;'>
+</div>
+<div class="container">
+  <div class="main-container">
+    <div class = "description-container">
+      <div class="box mr-5">
+        <h1><%= @flat.name %></h1>
+        <h4>
+          <div class= "light-text">
+          <%= @flat.address %>
+          </div>
+        </h4>
+      </div>
+      <div class="box mt-5">
+        <h3>A bit more about this flat...</h3>
+        <p><%= @flat.description %></p>
+      </div>
+    </div>
+
+    <div class="search-container m-3">
+      <div class="box">
+        <h5>Book this place</h5>
+
+      </div>
+      <div class="box mt-5">
+
+      </div>
+    </div>
+  </div>
+</div>
